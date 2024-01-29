@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.66705af6.css",
+    "main.js": "/Portfolio/static/js/main.be4177d3.js",
+    "static/media/HarmonyHub.png": "/Portfolio/static/media/HarmonyHub.963fd89c4f2d00796d8a.png",
+    "static/media/MotorGarage.png": "/Portfolio/static/media/MotorGarage.10ca5490cda5437494b6.png",
+    "static/media/MuscleMap.png": "/Portfolio/static/media/MuscleMap.33d1ac53199237e9473a.png",
+    "static/media/MotorGarage3.png": "/Portfolio/static/media/MotorGarage3.8b1a55f9f05df9de9619.png",
+    "static/media/MyPortfolio3.png": "/Portfolio/static/media/MyPortfolio3.956e630f9fe0343edf9e.png",
+    "static/media/MuscleMap4.png": "/Portfolio/static/media/MuscleMap4.a1d5b6bb7fcaf9b50791.png",
+    "static/media/MotorGarage2.png": "/Portfolio/static/media/MotorGarage2.91062e0250012860d54f.png",
+    "static/media/MotorGarage5.png": "/Portfolio/static/media/MotorGarage5.d89a320b2bbbc98dcd2e.png",
+    "static/media/MyPortfolio4.png": "/Portfolio/static/media/MyPortfolio4.a50103064e801dbb66b0.png",
+    "static/media/MotorGarage4.png": "/Portfolio/static/media/MotorGarage4.c9488da180134da8a74f.png",
+    "static/media/HarmonyHub2.png": "/Portfolio/static/media/HarmonyHub2.b5f7799caf0c9b15ed36.png",
+    "static/media/HarmonyHub3.png": "/Portfolio/static/media/HarmonyHub3.c7128b5bc4a5098a491d.png",
+    "static/media/MuscleMap2.png": "/Portfolio/static/media/MuscleMap2.da77210cd67d552701bd.png",
+    "static/media/MuscleMap3.png": "/Portfolio/static/media/MuscleMap3.99b07b94852b7359e202.png",
+    "static/media/ComingSoon.jpg": "/Portfolio/static/media/ComingSoon.564edf12150fa5ad4516.jpg",
+    "static/media/MyPortfolio.png": "/Portfolio/static/media/MyPortfolio.4976b0380811912a67cd.png",
+    "static/media/MyPortfolio2.png": "/Portfolio/static/media/MyPortfolio2.a99c177f3ce15f0c31a0.png",
+    "static/media/Golf.profile.jpg": "/Portfolio/static/media/Golf.profile.5553859500d894ae762b.jpg",
+    "static/media/resume.pdf": "/Portfolio/static/media/resume.c7ad16e5232959e3fffe.pdf",
+    "static/media/stock_rate.profile.jpeg": "/Portfolio/static/media/stock_rate.profile.fd94c0b3e043fd07c432.jpeg",
+    "static/media/Nishinomiya.profile.jpg": "/Portfolio/static/media/Nishinomiya.profile.9aff86b3d25dba49e14b.jpg",
+    "static/media/QUT.profile.jpg": "/Portfolio/static/media/QUT.profile.9a9172785bb2248a37d6.jpg",
+    "static/media/GarinCollege.profile.jpg": "/Portfolio/static/media/GarinCollege.profile.42e915c21c1218498e11.jpg",
+    "index.html": "/Portfolio/index.html",
+    "main.66705af6.css.map": "/Portfolio/static/css/main.66705af6.css.map",
+    "main.be4177d3.js.map": "/Portfolio/static/js/main.be4177d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66705af6.css",
+    "static/js/main.be4177d3.js"
+  ]
+}
