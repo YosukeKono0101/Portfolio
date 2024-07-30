@@ -8,25 +8,32 @@ const TopBanner = () => {
       <div className="jumbotron jumbotron-fluid text-center">
         <div className="container top">
           <h1 className="display-4">Yosuke Kono</h1>
-          <p className="lead">IT Engineer</p>
+          <p className="lead">Web Developer</p>
           <div className="social-icons">
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://github.com/YosukeKono0101" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/YosukeKono0101"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fa-brands fa-github"></i>
             </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/yosuke-kono-aa12661b0/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/yosuke-kono-aa12661b0/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fa-brands fa-linkedin-in"></i>
             </a>
           </div>
           <div className="cv-download-container">
-            <a href={ResumePDF} download="YosukeKono_Resume.pdf" className="cv-download-button">
-              Download CV
-              <i className="fa-solid fa-file-arrow-down download-icon"></i>
+            <a
+              href={ResumePDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cv-download-button"
+            >
+              View CV
+              <i className="fa-solid fa-eye download-icon"></i>
             </a>
           </div>
         </div>

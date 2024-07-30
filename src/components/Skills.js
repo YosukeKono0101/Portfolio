@@ -11,16 +11,17 @@ const Skills = () => {
         <div className="skill-section">
           <div className="skill-category">
             <h3>
-              <span className="black">Programming Languages</span>
+              <span className="black">Languages</span>
             </h3>
             <ul>
               <li>HTML & CSS</li>
+              <li>PHP</li>
+              <li>Laravel</li>
               <li>JavaScript</li>
               <li>C#</li>
               <li>Node.js</li>
               <li>Vue.js</li>
               <li>React</li>
-              <li>Python</li>
             </ul>
           </div>
           <div className="skill-category">
@@ -41,9 +42,8 @@ const Skills = () => {
               <span className="black">Other Skills</span>
             </h3>
             <ul>
-              <li>AWS</li>
-              <li>EC2</li>
               <li>MySQL</li>
+              <li>AWS</li>
               <li>MongoDB</li>
               <li>Docker</li>
             </ul>
