@@ -8,7 +8,7 @@ const TopBanner = () => {
       <div className="jumbotron jumbotron-fluid text-center">
         <div className="container top">
           <h1 className="display-4">Yosuke Kono</h1>
-          <p className="lead">Web Developer</p>
+          <p className="lead">Software Developer</p>
           <div className="social-icons">
             <a
               href="https://github.com/YosukeKono0101"
