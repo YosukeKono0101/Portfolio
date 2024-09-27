@@ -6,7 +6,7 @@ const Contact = () => {
     <div id="Contact">
       <div className="container contact">
         <div className="text-center">
-          <a href="mailto:real.menver@gmail.com" className="contact-link">
+          <a href="mailto:noahkono44@gmail.com" className="contact-link">
             Message Me
             <i className="fa-solid fa-envelope email-icon"></i>
           </a>
