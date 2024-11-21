@@ -4,12 +4,16 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import projects from "../config/projectsConfig";
 import ComingSoon from "../assets/ComingSoon.jpg";
+import "../animations.css";
+import "aos/dist/aos.css";
+import AOS from "aos";
+
+AOS.init();
 
 const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [mainImage, setMainImage] = useState(null);
-  const hoverClass = isModalOpen ? "no-hover" : "";
 
   const openModal = (projectId, event) => {
     event.preventDefault();
@@ -32,17 +36,23 @@ const Projects = () => {
   };
 
   return (
-    <div id="Projects">
+    <div id="Projects" className="projects-section">
       <div className="container project">
-        <h2 className="text-center animated">
+        <h2 className="text-center animated" data-aos="fade-up">
           <span className="white">My Projects</span>
         </h2>
-        <div className="work_images animated">
+        <div
+          className="work_images animated"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`work_image ${hoverClass}`}
+              className="work_image"
               onClick={(e) => openModal(project.id, e)}
+              data-aos="zoom-in"
+              data-aos-delay="300"
             >
               <a href="#">
                 <img
@@ -54,11 +64,12 @@ const Projects = () => {
               <p>{project.name}</p>
             </div>
           ))}
-
           {[...Array(1)].map((_, index) => (
             <div
               key={`coming-soon-${index}`}
-              className={`work_image ${hoverClass}`}
+              className="work_image"
+              data-aos="zoom-in"
+              data-aos-delay="400"
             >
               <a href="#">
                 <img className="img-fluid" src={ComingSoon} alt="Coming Soon" />
@@ -76,7 +87,9 @@ const Projects = () => {
             className="project-modal"
           >
             <Modal.Header>
-              <Modal.Title>{selectedProject.name}</Modal.Title>
+              <Modal.Title className="modal-title-custom">
+                {selectedProject.name}
+              </Modal.Title>
               <button
                 type="button"
                 className="btn-close-custom"
@@ -87,44 +100,12 @@ const Projects = () => {
               </button>
             </Modal.Header>
             <Modal.Body>
-              <div>
-                <p className="project-description">
-                  {selectedProject.description}
-                </p>
-                {selectedProject.features && (
-                  <div className="project-features">
-                    <h5>Features</h5>
-                    <ul>
-                      {selectedProject.features.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                <div className="languages-and-tech">
-                  <h5>Tech Stack</h5>
-                  {selectedProject.languagesAndTech && (
-                    <ul>
-                      {selectedProject.languagesAndTech.map((tech, index) => (
-                        <li key={index}>{tech}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-                {selectedProject.githubLink && (
-                  <a
-                    href={selectedProject.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-brands fa-github modal-icon"></i> GitHub
-                  </a>
-                )}
-                <div className="image-container">
+              <div className="modal-content-wrapper">
+                <div className="modal-left">
                   <img
                     src={mainImage}
                     alt={selectedProject.name}
-                    className="img-fluid main-image"
+                    className="main-image"
                   />
                   <div className="additional-images">
                     {selectedProject.additionalImages.map((image, index) => (
@@ -132,14 +113,56 @@ const Projects = () => {
                         key={index}
                         src={image}
                         alt={`Additional Image ${index + 1}`}
-                        className="img-fluid smaller-image"
+                        className="smaller-image"
                         onClick={() => swapImage(image)}
                       />
                     ))}
                   </div>
                 </div>
+                <div className="modal-right">
+                  <div className="project-section">
+                    <h5 className="section-title">Overview</h5>
+                    <p className="project-description">
+                      {selectedProject.description}
+                    </p>
+                  </div>
+                  {selectedProject.features && (
+                    <div className="project-section">
+                      <h5 className="section-title">Features</h5>
+                      <ul className="section-list">
+                        {selectedProject.features.map((feature, index) => (
+                          <li key={index}>{feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {selectedProject.languagesAndTech && (
+                    <div className="project-section">
+                      <h5 className="section-title">Tech Stack</h5>
+                      <ul className="section-list">
+                        {selectedProject.languagesAndTech.map((tech, index) => (
+                          <li key={index}>{tech}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {selectedProject.githubLink && (
+                    <div className="github-link-wrapper">
+                      <a
+                        href={selectedProject.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="github-link"
+                      >
+                        <i className="fa-brands fa-github modal-icon"></i> View
+                        on GitHub
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
             </Modal.Body>
+
             <Modal.Footer>
               <Button variant="secondary" onClick={closeModal}>
                 Close

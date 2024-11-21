@@ -1,5 +1,8 @@
 import React from "react";
 import "../main.css";
+import "../animations.css";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import skillsData from "../config/skillsConfig";
 import {
   FaCode,
@@ -10,17 +13,21 @@ import {
   FaCertificate,
 } from "react-icons/fa";
 
+AOS.init();
+
 const Skills = () => {
   return (
-    <div id="Skills">
+    <div id="Skills" className="skills-section">
       <div className="container skills">
-        <h2 className="c-title text-center">
+        <h2 data-aos="fade-up" className="c-title text-center">
           <span className="black">Skills & Qualifications</span>
         </h2>
-
         <div className="skill-section">
-          {/* Languages Section */}
-          <div className="skill-category">
+          <div
+            className="skill-category"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
             <h3>
               <FaCode className="icon" />{" "}
               <span className="black">Languages</span>
@@ -28,15 +35,16 @@ const Skills = () => {
             <ul>
               {skillsData.languages.map((skill, index) => (
                 <li key={index}>
-                  {/* Render the icon as a component */}
                   <skill.icon className="skill-icon" /> {skill.name}
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Frameworks/Libraries Section */}
-          <div className="skill-category">
+          <div
+            className="skill-category"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
             <h3>
               <FaTools className="icon" />{" "}
               <span className="black">Frameworks & Libraries</span>
@@ -44,30 +52,32 @@ const Skills = () => {
             <ul>
               {skillsData.frameworks.map((skill, index) => (
                 <li key={index}>
-                  {/* Render the icon as a component */}
                   <skill.icon className="skill-icon" /> {skill.name}
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Tools Section */}
-          <div className="skill-category">
+          <div
+            className="skill-category"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
             <h3>
               <FaWrench className="icon" /> <span className="black">Tools</span>
             </h3>
             <ul>
               {skillsData.tools.map((tool, index) => (
                 <li key={index}>
-                  {/* Render the icon as a component */}
                   <tool.icon className="skill-icon" /> {tool.name}
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Databases Section */}
-          <div className="skill-category">
+          <div
+            className="skill-category"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
             <h3>
               <FaDatabase className="icon" />{" "}
               <span className="black">Databases</span>
@@ -80,9 +90,11 @@ const Skills = () => {
               ))}
             </ul>
           </div>
-
-          {/* Soft Skills Section */}
-          <div className="skill-category">
+          <div
+            className="skill-category"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
             <h3>
               <FaHandshake className="icon" />{" "}
               <span className="black">Soft Skills</span>
@@ -93,9 +105,11 @@ const Skills = () => {
               ))}
             </ul>
           </div>
-
-          {/* Qualifications Section */}
-          <div className="skill-category">
+          <div
+            className="skill-category"
+            data-aos="zoom-in"
+            data-aos-delay="600"
+          >
             <h3>
               <FaCertificate className="icon" />{" "}
               <span className="black">Qualifications</span>

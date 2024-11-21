@@ -3,6 +3,7 @@ import "../main.css";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("TopBanner");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollToSection = (sectionId) => {
     if (sectionId === "TopBanner") {
@@ -10,27 +11,25 @@ const Header = () => {
         top: 0,
         behavior: "smooth",
       });
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      return;
+    }
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+      // Calculate the position with optional offset adjustment
+      const yOffset = -10; // Adjust if there's a fixed header, set to 0 if not needed
+      const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
     }
   };
 
   const handleScroll = () => {
-    const sections = [
-      "TopBanner",
-      "AboutMe",
-      "Profile", // Added Profile here
-      "Projects",
-      "Skills",
-      "Contact",
-    ];
-    let currentSection = "TopBanner";
+    const sections = ["AboutMe", "Profile", "Projects", "Skills", "Contact"];
+    let currentSection = "AboutMe";
 
     sections.forEach((sectionId) => {
       const section = document.getElementById(sectionId);
@@ -46,6 +45,7 @@ const Header = () => {
     });
 
     setActiveSection(currentSection);
+    setIsScrolled(window.scrollY > 50);
   };
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header>
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <a
           className="navbar-brand"
@@ -81,102 +81,27 @@ const Header = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav w-100 nav-justified">
-            <li
-              className={`nav-item ${
-                activeSection === "TopBanner" ? "active" : ""
-              }`}
-            >
-              <a
-                className="nav-link"
-                href="#TopBanner"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("TopBanner");
-                }}
-              >
-                Home
-              </a>
-            </li>
-            <li
-              className={`nav-item ${
-                activeSection === "AboutMe" ? "active" : ""
-              }`}
-            >
-              <a
-                className="nav-link"
-                href="#AboutMe"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("AboutMe");
-                }}
-              >
-                ABOUT ME
-              </a>
-            </li>
-            <li
-              className={`nav-item ${
-                activeSection === "Projects" ? "active" : ""
-              }`}
-            >
-              <a
-                className="nav-link"
-                href="#Projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("Projects");
-                }}
-              >
-                MY PROJECTS
-              </a>
-            </li>
-            <li
-              className={`nav-item ${
-                activeSection === "Skills" ? "active" : ""
-              }`}
-            >
-              <a
-                className="nav-link"
-                href="#Skills"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("Skills");
-                }}
-              >
-                SKILLS
-              </a>
-            </li>
-            <li
-              className={`nav-item ${
-                activeSection === "Profile" ? "active" : ""
-              }`}
-            >
-              <a
-                className="nav-link"
-                href="#Profile"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("Profile");
-                }}
-              >
-                PROFILE
-              </a>
-            </li>
-            <li
-              className={`nav-item ${
-                activeSection === "Contact" ? "active" : ""
-              }`}
-            >
-              <a
-                className="nav-link"
-                href="#Contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("Contact");
-                }}
-              >
-                CONTACT
-              </a>
-            </li>
+            {["AboutMe", "Projects", "Skills", "Profile", "Contact"].map(
+              (section) => (
+                <li
+                  key={section}
+                  className={`nav-item ${
+                    activeSection === section ? "active" : ""
+                  }`}
+                >
+                  <a
+                    className="nav-link"
+                    href={`#${section}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(section);
+                    }}
+                  >
+                    {section.replace(/([A-Z])/g, " $1").toUpperCase()}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </nav>
