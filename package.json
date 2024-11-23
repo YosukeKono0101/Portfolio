@@ -25,7 +25,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://YosukeKono0101.github.io/Portfolio",
+  "homepage": "https://YosukeKono0101.github.io",
   "eslintConfig": {
     "extends": [
       "react-app",
