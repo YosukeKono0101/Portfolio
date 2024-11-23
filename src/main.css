@@ -150,7 +150,7 @@ h2 {
 }
 
 .about-me-text {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #555;
   margin-bottom: 20px;
   line-height: 1.8;
@@ -198,7 +198,7 @@ h2 {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -207,7 +207,7 @@ h2 {
 }
 
 .work_image:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -216,11 +216,6 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-}
-
-.work_image.no-hover:hover {
-  transform: scale(1);
-  z-index: auto;
 }
 
 .work_image p {
