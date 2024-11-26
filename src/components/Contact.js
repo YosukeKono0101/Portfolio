@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../main.css";
+import emailJs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,11 +18,36 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    setIsSubmitted(true);
 
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setIsSubmitted(false), 5000);
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill out all fields before submitting.");
+      return;
+    }
+
+    const emailData = {
+      to_name: "Yosuke Kono",
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    emailJs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        emailData,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
+      .then(
+        (result) => {
+          setIsSubmitted(true);
+          setFormData({ name: "", email: "", message: "" });
+          setTimeout(() => setIsSubmitted(false), 5000);
+        },
+        (error) => {
+          console.error("Email sending error:", error.text);
+        }
+      );
   };
 
   return (
