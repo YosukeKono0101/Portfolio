@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.406030fe.css",
-    "main.js": "/static/js/main.542f1c46.js",
+    "main.js": "/static/js/main.df87582e.js",
     "static/media/HarmonyHub.png": "/static/media/HarmonyHub.963fd89c4f2d00796d8a.png",
     "static/media/MotorGarage.png": "/static/media/MotorGarage.10ca5490cda5437494b6.png",
     "static/media/MuscleMap.png": "/static/media/MuscleMap.33d1ac53199237e9473a.png",
@@ -29,10 +29,10 @@
     "static/media/GarinCollege.profile.jpg": "/static/media/GarinCollege.profile.42e915c21c1218498e11.jpg",
     "index.html": "/index.html",
     "main.406030fe.css.map": "/static/css/main.406030fe.css.map",
-    "main.542f1c46.js.map": "/static/js/main.542f1c46.js.map"
+    "main.df87582e.js.map": "/static/js/main.df87582e.js.map"
   },
   "entrypoints": [
     "static/css/main.406030fe.css",
-    "static/js/main.542f1c46.js"
+    "static/js/main.df87582e.js"
   ]
 }
