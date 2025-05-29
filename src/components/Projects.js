@@ -112,7 +112,7 @@ const Projects = () => {
                       <img
                         key={index}
                         src={image}
-                        alt={`Additional Image ${index + 1}`}
+                        alt={`Additional ${index + 1}`}
                         className="smaller-image"
                         onClick={() => swapImage(image)}
                       />
